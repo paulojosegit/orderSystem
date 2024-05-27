@@ -2,7 +2,6 @@ package com.startup.orderSystem.service;
 
 import com.startup.orderSystem.domain.User;
 import com.startup.orderSystem.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -18,7 +17,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Mono<User> findById(Integer id) {
+    public Mono<User> findById(int id) {
         return userRepository.findById(id);
     }
 
@@ -26,7 +25,11 @@ public class UserService {
         return userRepository.save(obj);
     }
 
-    public Mono<Void> delete(User obj) {
-        return userRepository.delete(obj);
+    public Mono<User> update(Integer id, User obj) {
+        return userRepository.findById(id);
+    }
+
+    public Mono<Void> deleteById(Integer id) {
+        return userRepository.deleteById(id);
     }
 }

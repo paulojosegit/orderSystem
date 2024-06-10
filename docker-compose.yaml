@@ -1,10 +1,24 @@
 version: '3.1'
 
 services:
+  spring:
+    image: order_system
+    container_name: orderSystem
+    ports:
+      - 8080:8080
   db:
     image: mysql
+    container_name: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
     ports:
       - 3306:3306
+    links:
+      - mysql:mysql
+    depends_on:
+      - spring
+
+networks:
+  spring_mysql:
+    driver: bridge

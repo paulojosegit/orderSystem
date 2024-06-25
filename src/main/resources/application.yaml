@@ -1,5 +1,5 @@
 spring:
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/order_system
+    url: r2dbc:mysql://db:3306/order_system_db
     username: root
     password: example

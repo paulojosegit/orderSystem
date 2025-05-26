@@ -1,5 +1,6 @@
 package com.startup.orderSystem;
 
+import com.startup.orderSystem.domain.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,6 +1,5 @@
 package com.startup.orderSystem.controller;
 
-
 import com.startup.orderSystem.domain.User;
 import com.startup.orderSystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,7 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PostMapping(value = "/users")
+    @PostMapping(value = "/users/CREATE")
     @ResponseStatus(CREATED)
     public Mono<User> save(@RequestBody User obj) {
         return userService.save(obj);

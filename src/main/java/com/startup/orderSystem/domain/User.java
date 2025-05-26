@@ -15,6 +15,6 @@ import org.springframework.data.relational.core.mapping.Table;
 public class User {
 
     @Id
-    public Integer id;
-    public String name;
+    private Integer id;
+    private String name;
 }
